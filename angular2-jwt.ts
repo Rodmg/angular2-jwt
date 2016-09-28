@@ -72,7 +72,7 @@ export class AuthHttp {
   private config: IAuthConfig;
   public tokenStream: Observable<string>;
 
-  constructor(options: AuthConfig, private http: Http, private defOpts?: RequestOptions) {
+  constructor(options: AuthConfig, public http: Http, public defOpts?: RequestOptions) {
     this.config = options.getConfig();
 
     this.tokenStream = new Observable<string>((obs: any) => {
